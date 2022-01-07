@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+:root {
+  --text-color: hsl(215, 51%, 70%);
+  --eth-color: hsl(178, 100%, 50%);
+  --main-back-color: hsl(217, 54%, 11%);
+  --main-card-color: hsl(216, 50%, 16%);
+  --line-color: hsl(215, 32%, 27%);
+  --head-text-color: hsl(0, 0%, 100%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Outfit", sans-serif;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 300;
+}
+::selection {
+  color: var(--main-back-color);
+  background-color: var(--eth-color);
+}
+h1 {
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--head-text-color);
+  transition: color 0.3s;
+}
+h1:hover {
+  color: var(--eth-color);
+}
+.parent {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--main-back-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.title-image {
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+  border-radius: 7.5px;
+  overflow: hidden;
+  position: relative;
+}
+.title-image:hover::before {
+  opacity: 0.5;
+}
+.title-image:hover svg {
+  opacity: 1;
+}
+.title-image::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--eth-color);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.title-image > img {
+  width: 100%;
+  height: 100%;
+}
+.title-image > svg {
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s;
+}
+.credits span {
+  cursor: pointer;
+  font-size: inherit;
+  color: var(--head-text-color);
+  transition: color 0.3s;
+}
+.credits span:hover {
+  color: var(--eth-color);
+}
+.credits > img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid var(--head-text-color);
+}
+.credits {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.credits::before {
+  content: "";
+  height: 0.5px;
+  width: 300px;
+  background: var(--line-color);
+  position: absolute;
+  top: -5px;
+}
+.credits > p {
+  font-size: smaller;
+}
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+li {
+  font-size: smaller;
+}
+li > span {
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--eth-color);
+}
+svg {
+  margin-top: -5px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.card {
+  height: 550px;
+  width: 340px;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--main-card-color);
+}
+.attribution {
+  position: absolute;
+  font-size: 11px;
+  bottom: 10px;
+  text-align: center;
+  align-self: flex-end;
+  width: 100%;
+}
+.attribution a {
+  font-size: 11px;
+  color: var(--eth-color);
+}
+
+/* Media Queries */
+@media (max-width: 375px) {
+  .card {
+    transform: scale(0.8);
+  }
+  .attribution a {
+    font-size: 9px;
+  }
+}
