@@ -101,7 +101,7 @@ h1:hover {
 }
 .credits::before {
   content: "";
-  height: 0.5px;
+  height: 1.5px;
   width: 300px;
   background: var(--line-color);
   position: absolute;
