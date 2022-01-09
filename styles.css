@@ -137,6 +137,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--main-card-color);
+  box-shadow: 0 15px 20px 10px hsl(216, 53%, 9%);
 }
 .attribution {
   position: absolute;
